@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-excel_file_path = 'C:\\PythonProjects\\Timetable Workbook - SUTT Task 1.xlsx'  # File path replaced
+excel_file_path = 'C:\\PythonProjects\\Timetable Workbook - SUTT Task 1.xlsx'  
 df = pd.read_excel(excel_file_path, sheet_name=None, header=None)
 
 parsed_data = {}
@@ -81,8 +81,7 @@ for sheet_name, sheet_data in df.items():
 
         if pd.notna(instructor) and last_section_data:
             last_section_data['instructors'].append(instructor)
-
-            # Process the time slot (convert to days and hours)
+            
             if pd.notna(time_slot):
                 time_parts = time_slot.split()
                 days = time_parts[0].split('-')
